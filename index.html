@@ -1,223 +1,263 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目主页</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <title>Some-Tools — 页面工具集</title>
+  <meta name="description" content="Some-Tools 是两个互相独立的小工具的集合入口：音律联觉共享地图与翻页相册书。通过统一导航，你可以快速进入想要使用的工具。">
+  <meta name="keywords" content="Some-Tools,页面工具集,音律联觉,翻页相册,HTML5,Web 工具">
+  <meta name="author" content="GoldenYouth01">
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Some-Tools — 页面工具集">
+  <meta property="og:description" content="两个互相独立的小工具，统一导航。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:url" content="https://goldenyouth01.github.io/Some-Tools/">
 
-        /* 装饰性背景圆 */
-        body::before,
-        body::after {
-            content: '';
-            position: fixed;
-            border-radius: 50%;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-        body::before {
-            width: 400px;
-            height: 400px;
-            background: #f9a8d4;
-            top: -100px;
-            right: -80px;
-        }
-        body::after {
-            width: 300px;
-            height: 300px;
-            background: #f9a8d4;
-            bottom: -60px;
-            left: -60px;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Some-Tools — 页面工具集">
+  <meta name="twitter:description" content="两个互相独立的小工具，统一导航。">
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* 标题区域 */
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
-            animation: fadeInDown 0.6s ease-out;
-        }
-
-        .header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #be185d;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-
-        .header p {
-            font-size: 16px;
-            color: #9d174d;
-            opacity: 0.8;
-        }
-
-        /* 卡片容器 */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        /* 单个卡片 */
-        .card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 32px 24px;
-            text-align: center;
-            box-shadow: 0 4px 24px rgba(236, 72, 153, 0.1);
-            border: 2px solid transparent;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            animation: fadeInUp 0.6s ease-out both;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .card:nth-child(1) { animation-delay: 0.15s; }
-        .card:nth-child(2) { animation-delay: 0.3s; }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 36px rgba(236, 72, 153, 0.2);
-            border-color: #f9a8d4;
-        }
-
-        /* 卡片图标区 */
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 36px;
-        }
-
-        .card:nth-child(1) .card-icon {
-            background: linear-gradient(135deg, #fce7f3, #fbcfe8);
-        }
-        .card:nth-child(2) .card-icon {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-        }
-
-        .card h2 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #1e1e1e;
-            margin-bottom: 8px;
-        }
-
-        .card .desc {
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            flex: 1;
-        }
-
-        .card .btn {
-            display: inline-block;
-            padding: 10px 28px;
-            background: #ec4899;
-            color: #fff;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .card .btn:hover {
-            background: #db2777;
-        }
-
-        /* 返回主站 */
-        .home-link {
-            display: block;
-            text-align: center;
-            margin-top: 32px;
-            color: #9d174d;
-            opacity: 0.5;
-            font-size: 14px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        .home-link:hover {
-            opacity: 0.9;
-        }
-
-        /* 动画 */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* 响应式 */
-        @media (max-width: 600px) {
-            .cards {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .header h1 { font-size: 26px; }
-            .header { margin-bottom: 32px; }
-            .card { padding: 24px 20px; }
-        }
-    </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://goldenyouth01.github.io/Some-Tools/">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ======================== Header (HUD bar) ======================== -->
+  <header class="site-header" role="banner">
     <div class="container">
-        <div class="header">
-            <h1>项目导航</h1>
-            <p>选择一个项目开始探索</p>
-        </div>
+      <a class="brand" href="#index" aria-label="Some-Tools 首页">
+        <span class="brand__mark">SOME-TOOLS</span>
+        <span class="brand__sub" aria-hidden="true">// TOOLS COLLECTION</span>
+      </a>
 
-        <div class="cards">
-            <a class="card" href="ambience_synesthesia.html">
-                <div class="card-icon">🗺️</div>
-                <h2>音律联觉共享地图</h2>
-                <p class="desc">在地图上标记与分享属于你的美好回忆，与团队成员协作共建。</p>
-                <span class="btn">进入项目</span>
-            </a>
+      <button class="nav-toggle" type="button"
+              aria-controls="primary-nav"
+              aria-expanded="false"
+              aria-label="切换导航">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
 
-            <a class="card" href="album.html">
-                <div class="card-icon">📖</div>
-                <h2>翻页相册书</h2>
-                <p class="desc">一本可翻页的电子相册，3D 翻书效果，记录青春的美好瞬间。</p>
-                <span class="btn">进入项目</span>
-            </a>
-        </div>
-
-        <a class="home-link" href="https://www.sevencentury.cn" target="_blank">&#8592; 返回主站</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="主导航">
+        <a href="#index">首页 / INDEX</a>
+        <a href="#tools">工具 / TOOLS</a>
+        <a href="#features">特性 / FEATURES</a>
+        <a href="#changelog">更新 / CHANGELOG</a>
+        <a href="#more">更多 / MORE</a>
+        <a href="https://github.com/GoldenYouth01/Some-Tools" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.sevencentury.cn" target="_blank" rel="noopener noreferrer">主站</a>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======================== 01 · INDEX ======================== -->
+    <section class="page page--hero hero" id="index" aria-labelledby="hero-title">
+      <div class="hero__bg-deco" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__inner">
+          <p class="eyebrow">// 01 — INDEX</p>
+
+          <h1 class="hero__title" id="hero-title">
+            SOME-TOOLS
+            <span class="hero__title-cn">页面工具集</span>
+          </h1>
+
+          <p class="hero__lede">
+            两个互相独立的小工具，统一导航。<br>
+            翻页相册书记录青春瞬间，音律联觉地图标记生活节奏——选择你的工具，开始探索。
+          </p>
+
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#tools">进入工具</a>
+            <a class="btn btn--secondary" href="https://github.com/GoldenYouth01/Some-Tools" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">SCROLL</div>
+    </section>
+
+    <!-- ======================== 02 · TOOLS ======================== -->
+    <section class="page" id="tools" aria-labelledby="tools-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index">// 02 — TOOLS</p>
+          <h2 class="section-head__title" id="tools-title">选择你的工具</h2>
+          <p class="section-head__sub">点击下方任意卡片即可进入对应工具。</p>
+        </header>
+
+        <ul class="project-grid" role="list">
+          <li style="--i:0">
+            <a class="project-card" href="ambience_synesthesia.html">
+              <header class="project-card__head">
+                <span class="project-card__index" aria-hidden="true">// 01</span>
+                <h3 class="project-card__title">音律联觉共享地图</h3>
+              </header>
+              <div class="project-card__body">
+                <div class="project-card__icon" aria-hidden="true">🗺️</div>
+                <p class="project-card__desc">
+                  在地图上标记与分享属于你的美好回忆，与团队成员协作共建。
+                  支持登录、组队、分类标记、地点搜索。
+                </p>
+              </div>
+              <footer class="project-card__foot">
+                <span class="project-card__cta">
+                  进入项目
+                  <span class="project-card__cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </footer>
+            </a>
+          </li>
+
+          <li style="--i:1">
+            <a class="project-card" href="album.html">
+              <header class="project-card__head">
+                <span class="project-card__index" aria-hidden="true">// 02</span>
+                <h3 class="project-card__title">翻页相册书</h3>
+              </header>
+              <div class="project-card__body">
+                <div class="project-card__icon" aria-hidden="true">📖</div>
+                <p class="project-card__desc">
+                  一本可翻页的电子相册，3D 翻书效果，记录青春的美好瞬间。
+                  多种翻页方式，内置背景音乐播放器。
+                </p>
+              </div>
+              <footer class="project-card__foot">
+                <span class="project-card__cta">
+                  进入项目
+                  <span class="project-card__cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </footer>
+            </a>
+          </li>
+
+          <li style="--i:2" aria-hidden="true">
+            <div class="project-card project-card--placeholder">
+              <header class="project-card__head">
+                <span class="project-card__index">// 03</span>
+                <h3 class="project-card__title">更多工具，敬请期待</h3>
+              </header>
+              <div class="project-card__body">
+                <div class="project-card__icon">✨</div>
+                <p class="project-card__desc">
+                  新的小工具正在打磨中……
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================== 03 · FEATURES ======================== -->
+    <section class="page" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index">// 03 — FEATURES</p>
+          <h2 class="section-head__title" id="features-title">设计理念</h2>
+          <p class="section-head__sub">Some-Tools 坚持的几个原则。</p>
+        </header>
+
+        <ul class="features" role="list">
+          <li class="feature">
+            <p class="feature__index">// A</p>
+            <h3 class="feature__title">完全开源</h3>
+            <p class="feature__desc">代码托管在 GitHub，采用 MIT 协议，欢迎 Star、Fork 与 PR。</p>
+          </li>
+          <li class="feature">
+            <p class="feature__index">// B</p>
+            <h3 class="feature__title">中文友好</h3>
+            <p class="feature__desc">全中文界面与文档，原生支持 CJK 字体显示。</p>
+          </li>
+          <li class="feature">
+            <p class="feature__index">// C</p>
+            <h3 class="feature__title">三端适配</h3>
+            <p class="feature__desc">桌面、平板、手机均经过测试与优化。</p>
+          </li>
+          <li class="feature">
+            <p class="feature__index">// D</p>
+            <h3 class="feature__title">即开即用</h3>
+            <p class="feature__desc">无需构建工具，打开 HTML 即可使用，无外部依赖。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================== 04 · CHANGELOG ======================== -->
+    <section class="page" id="changelog" aria-labelledby="changelog-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index">// 04 — CHANGELOG</p>
+          <h2 class="section-head__title" id="changelog-title">近期更新</h2>
+          <p class="section-head__sub">Some-Tools 的迭代记录即将上线，敬请期待。</p>
+        </header>
+
+        <ul class="changelog" role="list">
+          <li class="changelog__row changelog__row--placeholder">
+            <span class="changelog__date">—.—.—</span>
+            <span class="changelog__text">即将推出 / COMING SOON</span>
+            <span class="changelog__link" aria-hidden="true">PENDING</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================== 05 · MORE (Footer as section) ======================== -->
+  </main>
+
+  <footer class="site-footer page page--end" id="more" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="footer-col">
+          <p class="footer-col__title">// ABOUT</p>
+          <p style="font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--color-text-muted); line-height: 1.7; max-width: 28rem;">
+            Some-Tools 是一个由独立开发者维护的页面工具集合。
+            收录经过打磨的小工具，统一导航、即开即用。
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">// LINKS</p>
+          <ul>
+            <li><a href="https://github.com/GoldenYouth01/Some-Tools" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></li>
+            <li><a href="https://github.com/GoldenYouth01/Some-Tools/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a></li>
+            <li><a href="https://github.com/GoldenYouth01/Some-Tools/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">// EXTERNAL</p>
+          <ul>
+            <li><a href="https://www.sevencentury.cn" target="_blank" rel="noopener noreferrer">返回主站 ↗</a></li>
+            <li><a href="ambience_synesthesia.html">音律联觉地图</a></li>
+            <li><a href="album.html">翻页相册书</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__end">
+        <span>© 2026 SOME-TOOLS · BUILT WITH CARE</span>
+        <span class="end-mark">// TERMINAL READY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Right-side scroll progress hairline (ak-style vertical scan) -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar"></div>
+  </div>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
