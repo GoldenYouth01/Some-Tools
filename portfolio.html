@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <title>作品集 — GoldenYouth01 · Some-Tools</title>
+  <meta name="description" content="GoldenYouth01 的作品集：选定的项目案例、技术栈与联系方式。HUD / 暗色 / 霓虹青设计语言。">
+  <meta name="keywords" content="GoldenYouth01,作品集,portfolio,作品案例,前端,Some-Tools">
+  <meta name="author" content="GoldenYouth01">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="作品集 — GoldenYouth01">
+  <meta property="og:description" content="选定的项目案例、技术栈与联系方式。HUD / 暗色 / 霓虹青。">
+  <meta property="og:locale" content="zh_CN">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ======================== Header (HUD bar) ======================== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Some-Tools 首页">
+        <span class="brand__mark">SOME-TOOLS</span>
+        <span class="brand__sub" aria-hidden="true">// TOOLS COLLECTION</span>
+      </a>
+
+      <button class="nav-toggle" type="button"
+              aria-controls="primary-nav"
+              aria-expanded="false"
+              aria-label="切换导航">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="主导航">
+        <a href="index.html">首页 / INDEX</a>
+        <a href="#works">作品 / WORKS</a>
+        <a href="#about">关于 / ABOUT</a>
+        <a href="#contact">联系 / CONTACT</a>
+        <a href="https://github.com/GoldenYouth01" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.sevencentury.cn" target="_blank" rel="noopener noreferrer">主站</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======================== 01 · HERO ======================== -->
+    <section class="page page--hero hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg-deco" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__inner">
+          <p class="eyebrow">// 01 — PORTFOLIO</p>
+
+          <h1 class="hero__title" id="hero-title">
+            CHENXING
+            <span class="hero__title-cn">作品集</span>
+          </h1>
+
+          <p class="hero__lede">
+            独立开发者<br>
+            现就读于上海大学<br>
+          </p>
+
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#works">查看作品</a>
+            <a class="btn btn--secondary" href="#contact">联系我</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">SCROLL</div>
+    </section>
+
+    <!-- ======================== 02 · WORKS ======================== -->
+    <section class="page" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index">// 02 — WORKS</p>
+          <h2 class="section-head__title" id="works-title">近期作品</h2>
+          <p class="section-head__sub">精选项目。点击卡片可查看完整介绍与源码。</p>
+        </header>
+
+        <ul class="work-grid" role="list">
+          <li style="--i:0">
+            <a class="work-card" href="work.html?id=01" aria-label="作品 01：Some-Tools 主页">
+              <header class="work-card__head">
+                <span class="work-card__index" aria-hidden="true">// 01</span>
+                <span class="work-card__year" aria-hidden="true">2026</span>
+              </header>
+              <div class="work-card__thumb">
+                <span class="work-card__thumb-placeholder">// SCREENSHOT</span>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">Some-Tools 主页</h3>
+                <p class="work-card__desc">
+                  工具集合入口，HUD / 暗色 / 霓虹青。
+                  全屏滚动 snap + IntersectionObserver 高亮当前章节。
+                </p>
+                <div class="work-card__stack">
+                  <span class="work-card__tag">HTML</span>
+                  <span class="work-card__tag">CSS</span>
+                  <span class="work-card__tag">Vanilla JS</span>
+                </div>
+              </div>
+              <footer class="work-card__foot">
+                <span class="work-card__cta">
+                  VIEW PROJECT
+                  <span class="work-card__cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </footer>
+            </a>
+          </li>
+
+          <li style="--i:1">
+            <a class="work-card" href="work.html?id=02" aria-label="作品 02：音律联觉共享地图">
+              <header class="work-card__head">
+                <span class="work-card__index" aria-hidden="true">// 02</span>
+                <span class="work-card__year" aria-hidden="true">2026</span>
+              </header>
+              <div class="work-card__thumb">
+                <span class="work-card__thumb-placeholder">// SCREENSHOT</span>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">音律联觉共享地图</h3>
+                <p class="work-card__desc">
+                  团队共享地图，支持登录、组队、分类标记、地点搜索。
+                  标记属于你的美好回忆，与团队成员协作共建。
+                </p>
+                <div class="work-card__stack">
+                  <span class="work-card__tag">Map API</span>
+                  <span class="work-card__tag">Auth</span>
+                  <span class="work-card__tag">Storage</span>
+                </div>
+              </div>
+              <footer class="work-card__foot">
+                <span class="work-card__cta">
+                  VIEW PROJECT
+                  <span class="work-card__cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </footer>
+            </a>
+          </li>
+
+          <li style="--i:2">
+            <a class="work-card" href="work.html?id=03" aria-label="作品 03：翻页相册书">
+              <header class="work-card__head">
+                <span class="work-card__index" aria-hidden="true">// 03</span>
+                <span class="work-card__year" aria-hidden="true">2026</span>
+              </header>
+              <div class="work-card__thumb">
+                <span class="work-card__thumb-placeholder">// SCREENSHOT</span>
+              </div>
+              <div class="work-card__body">
+                <h3 class="work-card__title">翻页相册书</h3>
+                <p class="work-card__desc">
+                  一本可翻页的电子相册，3D 翻书效果记录青春瞬间。
+                  多种翻页方式，内置背景音乐播放器。
+                </p>
+                <div class="work-card__stack">
+                  <span class="work-card__tag">CSS 3D</span>
+                  <span class="work-card__tag">Audio</span>
+                  <span class="work-card__tag">Animation</span>
+                </div>
+              </div>
+              <footer class="work-card__foot">
+                <span class="work-card__cta">
+                  VIEW PROJECT
+                  <span class="work-card__cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </footer>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================== 03 · ABOUT ======================== -->
+    <section class="page" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index">// 03 — ABOUT</p>
+          <h2 class="section-head__title" id="about-title">关于</h2>
+          <p class="section-head__sub">独立开发者，做一些觉得有意思的小工具。</p>
+        </header>
+
+        <div class="about">
+          <div class="about__photo">
+            <span class="about__photo-placeholder" aria-hidden="true">// AVATAR</span>
+          </div>
+
+          <div class="about__body">
+            <h3 class="about__name">GoldenYouth01</h3>
+            <p class="about__bio">
+              热爱把想法变成可用的东西。日常折腾 HTML / CSS / 原生 JavaScript，
+              不依赖构建工具与前端框架，喜欢小而直接的实现方式。
+              偶尔写写工具、做做地图、整理相册。
+              这里是选出来的几个项目，代表近期的关注方向与设计取舍。
+            </p>
+
+            <div class="about__skills" aria-label="技能标签">
+              <span class="about__skill">HTML5</span>
+              <span class="about__skill">CSS3</span>
+              <span class="about__skill">JavaScript</span>
+              <span class="about__skill">TypeScript</span>
+              <span class="about__skill">Responsive</span>
+              <span class="about__skill">A11Y</span>
+              <span class="about__skill">UI / UX</span>
+              <span class="about__skill">Design Tokens</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== 04 · CONTACT ======================== -->
+    <section class="page page--end" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-head__index">// 04 — CONTACT</p>
+          <h2 class="section-head__title" id="contact-title">联系方式</h2>
+          <p class="section-head__sub">欢迎通过以下方式联系我。</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__row">
+            <span class="contact__label">// EMAIL</span>
+            <span class="contact__value">
+              <a href="mailto:goldenyouth01@sevencentury.cn">goldenyouth01@sevencentury.cn</a>
+            </span>
+          </div>
+          <div class="contact__row">
+            <span class="contact__label">// GITHUB</span>
+            <span class="contact__value">
+              <a href="https://github.com/GoldenYouth01" target="_blank" rel="noopener noreferrer">
+                github.com/GoldenYouth01 ↗
+              </a>
+            </span>
+          </div>
+          <div class="contact__row">
+            <span class="contact__label">// SITE</span>
+            <span class="contact__value">
+              <a href="https://www.sevencentury.cn" target="_blank" rel="noopener noreferrer">
+                sevencentury.cn ↗
+              </a>
+            </span>
+          </div>
+          <div class="contact__row">
+            <span class="contact__label">// RESUME</span>
+            <span class="contact__value">
+              <a href="resume.pdf" download>下载 PDF 简历 ↓</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="footer-col">
+          <p class="footer-col__title">// ABOUT</p>
+          <p style="font-family: var(--font-sans); font-size: var(--fs-sm); color: var(--color-text-muted); line-height: 1.7; max-width: 28rem;">
+            GoldenYouth01 的作品集页面，与 Some-Tools 工具集合共享同一套 HUD 暗色霓虹青设计系统。
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">// LINKS</p>
+          <ul>
+            <li><a href="index.html">Some-Tools 主页</a></li>
+            <li><a href="https://github.com/GoldenYouth01/Some-Tools" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></li>
+            <li><a href="https://github.com/GoldenYouth01/Some-Tools/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">// SECTIONS</p>
+          <ul>
+            <li><a href="#works">作品 / WORKS</a></li>
+            <li><a href="#about">关于 / ABOUT</a></li>
+            <li><a href="#contact">联系 / CONTACT</a></li>
+            <li><a href="https://www.sevencentury.cn" target="_blank" rel="noopener noreferrer">返回主站 ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__end">
+        <span>© 2026 GOLDENYOUTH01 · BUILT WITH CARE</span>
+        <span class="end-mark">// TERMINAL READY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Right-side scroll progress hairline -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar"></div>
+  </div>
+
+  <!-- Back-to-top button (HUD style) -->
+  <button class="back-to-top" type="button" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+      <polyline points="6 14 12 8 18 14"/>
+    </svg>
+  </button>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
